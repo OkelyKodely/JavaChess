@@ -429,6 +429,234 @@ public class JavaChess {
             }
         };
         pawnWhite8.setLocation(7, 6);
+        queenWhite = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        queenWhite.setLocation(3, 7);
+        kingWhite = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        kingWhite.setLocation(4, 7);
+        queenBlack = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        queenBlack.setLocation(3, 0);
+        kingBlack = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        kingBlack.setLocation(4, 0);
+        knightWhite = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        knightWhite.setLocation(1,7);
+        bishopWhite = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        bishopWhite.setLocation(2,7);
+        knightWhite2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        knightWhite2.setLocation(6,7);
+        bishopWhite2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        bishopWhite2.setLocation(5,7);
+        knightBlack = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        knightBlack.setLocation(1,0);
+        bishopBlack = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        bishopBlack.setLocation(2,0);
+        knightBlack2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        knightBlack2.setLocation(6,0);
+        bishopBlack2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        bishopBlack2.setLocation(5,0);
     }
     
     void refresh() {
@@ -513,12 +741,60 @@ public class JavaChess {
             Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
             g.drawImage(i, (int) pawnWhite8.getX()*100+15, (int) pawnWhite8.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("queenWhite.png"));
+            g.drawImage(i, (int) queenWhite.getX()*100+15, (int) queenWhite.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("kingWhite.png"));
+            g.drawImage(i, (int) kingWhite.getX()*100+15, (int) kingWhite.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) queenBlack.getX()*100+15, (int) queenBlack.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) kingBlack.getX()*100+15, (int) kingBlack.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) knightBlack.getX()*100+15, (int) knightBlack.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) bishopBlack.getX()*100+15, (int) bishopBlack.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) knightBlack2.getX()*100+15, (int) knightBlack2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) bishopBlack2.getX()*100+15, (int) bishopBlack2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) knightWhite.getX()*100+15, (int) knightWhite.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) bishopWhite.getX()*100+15, (int) bishopWhite.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) knightWhite2.getX()*100+15, (int) knightWhite2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) bishopWhite2.getX()*100+15, (int) bishopWhite2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
     }
     
     void paintBoard() {
         Thread t = new Thread() {
             public void run() {
-                g.setColor(Color.WHITE);
+                g.setColor(Color.RED);
                 for(int j=0; j<8; j++)
                 for(int i=0; i<8; i++) {
                     if(j == 0 ||
@@ -545,7 +821,7 @@ public class JavaChess {
                         g.fillRect(i*100,j*100,100,100);
                 }
 
-                g.setColor(Color.WHITE);
+                g.setColor(Color.RED);
                 for(int j=0; j<8; j++)
                 for(int i=0; i<8; i++) {
                     if(j == 1 ||
@@ -593,12 +869,7 @@ public class JavaChess {
         g = p.getGraphics();
     }
     
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
         new JavaChess();
     }
-    
 }
