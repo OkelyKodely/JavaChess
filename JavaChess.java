@@ -66,6 +66,44 @@ public class JavaChess {
             }
         };
         rookBlack2.setLocation(7, 0);
+        rookWhite = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        rookWhite.setLocation(0, 7);
+        rookWhite2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        rookWhite2.setLocation(7, 7);
     }
     
     void refresh() {
@@ -77,6 +115,14 @@ public class JavaChess {
         try {
             Image i = ImageIO.read(getClass().getResourceAsStream("rookBlack.png"));
             g.drawImage(i, (int) rookBlack2.getX()*100+15, (int) rookBlack2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("rookWhite.png"));
+            g.drawImage(i, (int) rookWhite.getX()*100+15, (int) rookWhite.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("rookWhite.png"));
+            g.drawImage(i, (int) rookWhite2.getX()*100+15, (int) rookWhite2.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
     }
     
