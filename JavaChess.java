@@ -3,10 +3,13 @@ package javachess;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Point2D;
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -36,7 +39,18 @@ public class JavaChess implements MouseListener {
         
         paintBoard();
         
-        refresh();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true) {
+                    refresh();
+                    try {
+                        Thread.sleep(1000);
+                    } catch(Exception e) {}
+                }
+            }
+        });
+        thread.start();
     }
     
     @Override
@@ -999,7 +1013,7 @@ public class JavaChess implements MouseListener {
             g.drawImage(i, (int) queenBlack.getX()*100+15, (int) queenBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("kingBlack.png"));
             g.drawImage(i, (int) kingBlack.getX()*100+15, (int) kingBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
@@ -1007,7 +1021,7 @@ public class JavaChess implements MouseListener {
             g.drawImage(i, (int) knightBlack.getX()*100+15, (int) knightBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("bishopBlack.png"));
             g.drawImage(i, (int) bishopBlack.getX()*100+15, (int) bishopBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
@@ -1015,23 +1029,23 @@ public class JavaChess implements MouseListener {
             g.drawImage(i, (int) knightBlack2.getX()*100+15, (int) knightBlack2.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("bishopBlack.png"));
             g.drawImage(i, (int) bishopBlack2.getX()*100+15, (int) bishopBlack2.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("knightWhite.png"));
             g.drawImage(i, (int) knightWhite.getX()*100+15, (int) knightWhite.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("bishopWhite.png"));
             g.drawImage(i, (int) bishopWhite.getX()*100+15, (int) bishopWhite.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("knightWhite.png"));
             g.drawImage(i, (int) knightWhite2.getX()*100+15, (int) knightWhite2.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("bishopWhite.png"));
             g.drawImage(i, (int) bishopWhite2.getX()*100+15, (int) bishopWhite2.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
     }
@@ -1103,7 +1117,39 @@ public class JavaChess implements MouseListener {
         p.setBounds(0,0,800,800);
         j.add(p);
         JPanel pp = new JPanel();
-        pp.setBounds(200,0,200,900);
+        pp.setBounds(800,0,200,900);
+        JButton c = new JButton("DESELECT");
+        c.setBounds(0,10,160,35);
+        c.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                xx = X = selectedX = -10;
+                yy = Y = selectedY = -10;
+                
+                press = 0;
+                
+                refresh();
+                
+            }
+        });
+        JButton b = new JButton("New");
+        b.setBounds(0,10,40,35);
+        b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xx = X = selectedX = -10;
+                yy = Y = selectedY = -10;
+                press = 0;
+                
+                initBoard();
+
+                refresh();
+                
+            }
+        });
+        pp.add(b);
+        pp.add(c);
         j.add(pp);
         j.setVisible(true);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
