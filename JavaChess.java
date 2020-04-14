@@ -750,7 +750,7 @@ public class JavaChess {
             g.drawImage(i, (int) kingWhite.getX()*100+15, (int) kingWhite.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("queenBlack.png"));
             g.drawImage(i, (int) queenBlack.getX()*100+15, (int) queenBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
