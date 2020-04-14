@@ -16,7 +16,9 @@ public class JavaChess {
 
     Point2D rookBlack, knightBlack, bishopBlack, queenBlack, kingBlack, bishopBlack2, knightBlack2, rookBlack2;
     Point2D rookWhite, knightWhite, bishopWhite, queenWhite, kingWhite, bishopWhite2, knightWhite2, rookWhite2;
-
+    Point2D pawnWhite, pawnWhite2, pawnWhite3, pawnWhite4, pawnWhite5, pawnWhite6, pawnWhite7, pawnWhite8;
+    Point2D pawnBlack, pawnBlack2, pawnBlack3, pawnBlack4, pawnBlack5, pawnBlack6, pawnBlack7, pawnBlack8;
+    
     public JavaChess() {
         setGUI();
         
@@ -104,6 +106,329 @@ public class JavaChess {
             }
         };
         rookWhite2.setLocation(7, 7);
+        rookBlack2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        rookBlack2.setLocation(7, 0);
+        pawnBlack = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack.setLocation(0, 1);
+        pawnBlack2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack2.setLocation(1, 1);
+        pawnBlack3 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack3.setLocation(2, 1);
+        pawnBlack4 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack4.setLocation(3, 1);
+        pawnBlack5 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack5.setLocation(4, 1);
+        pawnBlack6 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack6.setLocation(5, 1);
+        pawnBlack7 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack7.setLocation(6, 1);
+        pawnBlack8 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnBlack8.setLocation(7, 1);
+        pawnWhite = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite.setLocation(0, 6);
+        pawnWhite2 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite2.setLocation(1, 6);
+        pawnWhite3 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite3.setLocation(2, 6);
+        pawnWhite4 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite4.setLocation(3, 6);
+        pawnWhite5 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite5.setLocation(4, 6);
+        pawnWhite6 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite6.setLocation(5, 6);
+        pawnWhite7 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite7.setLocation(6, 6);
+        pawnWhite8 = new Point2D() {
+            int x, y;
+            @Override
+            public double getX() {
+                return (double) this.x;
+            }
+
+            @Override
+            public double getY() {
+                return (double) this.y;
+            }
+
+            @Override
+            public void setLocation(double x, double y) {
+                this.x = (int) x;
+                this.y = (int) y;
+            }
+        };
+        pawnWhite8.setLocation(7, 6);
     }
     
     void refresh() {
@@ -123,6 +448,70 @@ public class JavaChess {
         try {
             Image i = ImageIO.read(getClass().getResourceAsStream("rookWhite.png"));
             g.drawImage(i, (int) rookWhite2.getX()*100+15, (int) rookWhite2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack.getX()*100+15, (int) pawnBlack.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack2.getX()*100+15, (int) pawnBlack2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack3.getX()*100+15, (int) pawnBlack3.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack4.getX()*100+15, (int) pawnBlack4.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack5.getX()*100+15, (int) pawnBlack5.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack6.getX()*100+15, (int) pawnBlack6.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack7.getX()*100+15, (int) pawnBlack7.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            g.drawImage(i, (int) pawnBlack8.getX()*100+15, (int) pawnBlack8.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite.getX()*100+15, (int) pawnWhite.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite2.getX()*100+15, (int) pawnWhite2.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite3.getX()*100+15, (int) pawnWhite3.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite4.getX()*100+15, (int) pawnWhite4.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite5.getX()*100+15, (int) pawnWhite5.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite6.getX()*100+15, (int) pawnWhite6.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite7.getX()*100+15, (int) pawnWhite7.getY()*100+15, 70, 70, null);
+        } catch(Exception e) {}
+        try {
+            Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
+            g.drawImage(i, (int) pawnWhite8.getX()*100+15, (int) pawnWhite8.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
     }
     
