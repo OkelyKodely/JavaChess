@@ -3,12 +3,14 @@ package javachess;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.geom.Point2D;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class JavaChess {
+public class JavaChess implements MouseListener {
 
     JFrame j = new JFrame();
     JPanel p = new JPanel();
@@ -19,6 +21,14 @@ public class JavaChess {
     Point2D pawnWhite, pawnWhite2, pawnWhite3, pawnWhite4, pawnWhite5, pawnWhite6, pawnWhite7, pawnWhite8;
     Point2D pawnBlack, pawnBlack2, pawnBlack3, pawnBlack4, pawnBlack5, pawnBlack6, pawnBlack7, pawnBlack8;
     
+    int xx = -10, yy = -10;
+    
+    int X = -10, Y = -10;
+    
+    int press = 0;
+    
+    int selectedX = -10, selectedY = -10;
+
     public JavaChess() {
         setGUI();
         
@@ -29,6 +39,241 @@ public class JavaChess {
         refresh();
     }
     
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+        if(press == 0) {
+
+            X = (int)((double)e.getX()/(double)100);
+            Y = (int)((double)e.getY()/(double)100);
+            
+            selectedX = X;
+            selectedY = Y;
+            
+            press = 1;
+            refresh();
+        } else if(press == 1) {
+            
+            selectedX = -10;
+            selectedY = -10;
+
+            xx = (int)((double)e.getX()/(double)100);
+            yy = (int)((double)e.getY()/(double)100);
+
+            if(rookWhite.getX() == xx && rookWhite.getY() == yy) {
+                rookWhite.setLocation(-1000, yy);
+            }
+            if(rookWhite2.getX() == xx && rookWhite2.getY() == yy) {
+                rookWhite2.setLocation(-1000, yy);
+            }
+            if(bishopWhite.getX() == xx && bishopWhite.getY() == yy) {
+                bishopWhite.setLocation(-1000, yy);
+            }
+            if(bishopWhite2.getX() == xx && bishopWhite2.getY() == yy) {
+                bishopWhite2.setLocation(-1000, yy);
+            }
+            if(knightWhite.getX() == xx && knightWhite.getY() == yy) {
+                knightWhite.setLocation(-1000, yy);
+            }
+            if(knightWhite2.getX() == xx && knightWhite2.getY() == yy) {
+                knightWhite2.setLocation(-1000, yy);
+            }
+            if(pawnWhite.getX() == xx && pawnWhite.getY() == yy) {
+                pawnWhite.setLocation(-1000, yy);
+            }
+            if(pawnWhite2.getX() == xx && pawnWhite2.getY() == yy) {
+                pawnWhite2.setLocation(-1000, yy);
+            }
+            if(pawnWhite3.getX() == xx && pawnWhite3.getY() == yy) {
+                pawnWhite3.setLocation(-1000, yy);
+            }
+            if(pawnWhite4.getX() == xx && pawnWhite4.getY() == yy) {
+                pawnWhite4.setLocation(-1000, yy);
+            }
+            if(pawnWhite5.getX() == xx && pawnWhite5.getY() == yy) {
+                pawnWhite5.setLocation(-1000, yy);
+            }
+            if(pawnWhite6.getX() == xx && pawnWhite6.getY() == yy) {
+                pawnWhite6.setLocation(-1000, yy);
+            }
+            if(pawnWhite7.getX() == xx && pawnWhite7.getY() == yy) {
+                pawnWhite7.setLocation(-1000, yy);
+            }
+            if(pawnWhite8.getX() == xx && pawnWhite8.getY() == yy) {
+                pawnWhite8.setLocation(-1000, yy);
+            }
+            if(rookBlack.getX() == xx && rookBlack.getY() == yy) {
+                rookBlack.setLocation(-1000, yy);
+            }
+            if(rookBlack2.getX() == xx && rookBlack2.getY() == yy) {
+                rookBlack2.setLocation(-1000, yy);
+            }
+            if(bishopBlack.getX() == xx && bishopBlack.getY() == yy) {
+                bishopBlack.setLocation(-1000, yy);
+            }
+            if(bishopBlack2.getX() == xx && bishopBlack2.getY() == yy) {
+                bishopBlack2.setLocation(-1000, yy);
+            }
+            if(knightBlack.getX() == xx && knightBlack.getY() == yy) {
+                knightBlack.setLocation(-1000, yy);
+            }
+            if(knightBlack2.getX() == xx && knightBlack2.getY() == yy) {
+                knightBlack2.setLocation(-1000, yy);
+            }
+            if(pawnBlack.getX() == xx && pawnBlack.getY() == yy) {
+                pawnBlack.setLocation(-1000, yy);
+            }
+            if(pawnBlack2.getX() == xx && pawnBlack2.getY() == yy) {
+                pawnBlack2.setLocation(-1000, yy);
+            }
+            if(pawnBlack3.getX() == xx && pawnBlack3.getY() == yy) {
+                pawnBlack3.setLocation(-1000, yy);
+            }
+            if(pawnBlack4.getX() == xx && pawnBlack4.getY() == yy) {
+                pawnBlack4.setLocation(-1000, yy);
+            }
+            if(pawnBlack5.getX() == xx && pawnBlack5.getY() == yy) {
+                pawnBlack5.setLocation(-1000, yy);
+            }
+            if(pawnBlack6.getX() == xx && pawnBlack6.getY() == yy) {
+                pawnBlack6.setLocation(-1000, yy);
+            }
+            if(pawnBlack7.getX() == xx && pawnBlack7.getY() == yy) {
+                pawnBlack7.setLocation(-1000, yy);
+            }
+            if(pawnBlack8.getX() == xx && pawnBlack8.getY() == yy) {
+                pawnBlack8.setLocation(-1000, yy);
+            }
+            if(kingBlack.getX() == xx && kingBlack.getY() == yy) {
+                kingBlack.setLocation(-1000, yy);
+            }
+            if(kingWhite.getX() == xx && kingWhite.getY() == yy) {
+                kingWhite.setLocation(-1000, yy);
+            }
+            if(queenBlack.getX() == xx && queenBlack.getY() == yy) {
+                queenBlack.setLocation(-1000, yy);
+            }
+            if(queenWhite.getX() == xx && queenWhite.getY() == yy) {
+                queenWhite.setLocation(-1000, yy);
+            }
+
+            if(rookWhite.getX() == X && rookWhite.getY() == Y) {
+                rookWhite.setLocation(xx, yy);
+            }
+            if(rookWhite2.getX() == X && rookWhite2.getY() == Y) {
+                rookWhite2.setLocation(xx, yy);
+            }
+            if(bishopWhite.getX() == X && bishopWhite.getY() == Y) {
+                bishopWhite.setLocation(xx, yy);
+            }
+            if(bishopWhite2.getX() == X && bishopWhite2.getY() == Y) {
+                bishopWhite2.setLocation(xx, yy);
+            }
+            if(knightWhite.getX() == X && knightWhite.getY() == Y) {
+                knightWhite.setLocation(xx, yy);
+            }
+            if(knightWhite2.getX() == X && knightWhite2.getY() == Y) {
+                knightWhite2.setLocation(xx, yy);
+            }
+            if(pawnWhite.getX() == X && pawnWhite.getY() == Y) {
+                pawnWhite.setLocation(xx, yy);
+            }
+            if(pawnWhite2.getX() == X && pawnWhite2.getY() == Y) {
+                pawnWhite2.setLocation(xx, yy);
+            }
+            if(pawnWhite3.getX() == X && pawnWhite3.getY() == Y) {
+                pawnWhite3.setLocation(xx, yy);
+            }
+            if(pawnWhite4.getX() == X && pawnWhite4.getY() == Y) {
+                pawnWhite4.setLocation(xx, yy);
+            }
+            if(pawnWhite5.getX() == X && pawnWhite5.getY() == Y) {
+                pawnWhite5.setLocation(xx, yy);
+            }
+            if(pawnWhite6.getX() == X && pawnWhite6.getY() == Y) {
+                pawnWhite6.setLocation(xx, yy);
+            }
+            if(pawnWhite7.getX() == X && pawnWhite7.getY() == Y) {
+                pawnWhite7.setLocation(xx, yy);
+            }
+            if(pawnWhite8.getX() == X && pawnWhite8.getY() == Y) {
+                pawnWhite8.setLocation(xx, yy);
+            }
+            if(rookBlack.getX() == X && rookBlack.getY() == Y) {
+                rookBlack.setLocation(xx, yy);
+            }
+            if(rookBlack2.getX() == X && rookBlack2.getY() == Y) {
+                rookBlack2.setLocation(xx, yy);
+            }
+            if(bishopBlack.getX() == X && bishopBlack.getY() == Y) {
+                bishopBlack.setLocation(xx, yy);
+            }
+            if(bishopBlack2.getX() == X && bishopBlack2.getY() == Y) {
+                bishopBlack2.setLocation(xx, yy);
+            }
+            if(knightBlack.getX() == X && knightBlack.getY() == Y) {
+                knightBlack.setLocation(xx, yy);
+            }
+            if(knightBlack2.getX() == X && knightBlack2.getY() == Y) {
+                knightBlack2.setLocation(xx, yy);
+            }
+            if(pawnBlack.getX() == X && pawnBlack.getY() == Y) {
+                pawnBlack.setLocation(xx, yy);
+            }
+            if(pawnBlack2.getX() == X && pawnBlack2.getY() == Y) {
+                pawnBlack2.setLocation(xx, yy);
+            }
+            if(pawnBlack3.getX() == X && pawnBlack3.getY() == Y) {
+                pawnBlack3.setLocation(xx, yy);
+            }
+            if(pawnBlack4.getX() == X && pawnBlack4.getY() == Y) {
+                pawnBlack4.setLocation(xx, yy);
+            }
+            if(pawnBlack5.getX() == X && pawnBlack5.getY() == Y) {
+                pawnBlack5.setLocation(xx, yy);
+            }
+            if(pawnBlack6.getX() == X && pawnBlack6.getY() == Y) {
+                pawnBlack6.setLocation(xx, yy);
+            }
+            if(pawnBlack7.getX() == X && pawnBlack7.getY() == Y) {
+                pawnBlack7.setLocation(xx, yy);
+            }
+            if(pawnBlack8.getX() == X && pawnBlack8.getY() == Y) {
+                pawnBlack8.setLocation(xx, yy);
+            }
+            if(kingBlack.getX() == X && kingBlack.getY() == Y) {
+                kingBlack.setLocation(xx, yy);
+            }
+            if(kingWhite.getX() == X && kingWhite.getY() == Y) {
+                kingWhite.setLocation(xx, yy);
+            }
+            if(queenBlack.getX() == X && queenBlack.getY() == Y) {
+                queenBlack.setLocation(xx, yy);
+            }
+            if(queenWhite.getX() == X && queenWhite.getY() == Y) {
+                queenWhite.setLocation(xx, yy);
+            }
+            press = 0;
+            refresh();
+        }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    }
+
     void initBoard() {
         rookBlack = new Point2D() {
             int x, y;
@@ -863,6 +1108,7 @@ public class JavaChess {
         j.setVisible(true);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setGraphics();
+        j.addMouseListener(this);
     }
     
     void setGraphics() {
