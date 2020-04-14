@@ -758,7 +758,7 @@ public class JavaChess {
             g.drawImage(i, (int) kingBlack.getX()*100+15, (int) kingBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("knightBlack.png"));
             g.drawImage(i, (int) knightBlack.getX()*100+15, (int) knightBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
@@ -766,7 +766,7 @@ public class JavaChess {
             g.drawImage(i, (int) bishopBlack.getX()*100+15, (int) bishopBlack.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
-            Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
+            Image i = ImageIO.read(getClass().getResourceAsStream("knightBlack.png"));
             g.drawImage(i, (int) knightBlack2.getX()*100+15, (int) knightBlack2.getY()*100+15, 70, 70, null);
         } catch(Exception e) {}
         try {
