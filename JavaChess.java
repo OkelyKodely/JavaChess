@@ -27,6 +27,7 @@ public class JavaChess implements MouseListener {
     int selectedX = -10, selectedY = -10;
 
     public JavaChess() {
+        
         setGUI();
         
         initBoard();
@@ -40,7 +41,7 @@ public class JavaChess implements MouseListener {
                     refresh();
                     drawEaten();
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(10000);
                     } catch(Exception e) {}
                 }
             }
@@ -49,187 +50,224 @@ public class JavaChess implements MouseListener {
     }
     
     void drawEaten() {
+        
+        g2.setColor(Color.LIGHT_GRAY);
+        g2.fillRect(0, 110, 200, 500);
+        
         g2.setColor(Color.BLACK);
         g2.drawString("B   W    captured pieces", 15, 140);
+
+        int iy = 0;
+
         try {
             if(pawnWhite.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 20+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 20+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite3.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 40+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite4.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 60+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite5.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 80+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite6.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 100+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite7.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 120+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnWhite8.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 140+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(rookWhite.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("rookWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 160+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(rookWhite2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("rookWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 180+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(knightWhite.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("knightWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 200+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(knightWhite2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("knightWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 220+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(bishopWhite.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("bishopWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 240+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(bishopWhite2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("bishopWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 260+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
         try {
             if(queenWhite.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("queenWhite.png"));
-                g2.drawImage(i, (int) 20+15, (int) 280+150, 10, 10, null);
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
             }
         } catch(Exception e) {}
 
+        int yy = 0;
         try {
             if(pawnBlack.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 0+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 20+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack3.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 40+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack4.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 60+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack5.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 80+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack6.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 100+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack7.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 120+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(pawnBlack8.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("pawnBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 140+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(rookBlack.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("rookBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 160+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(rookBlack2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("rookBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 180+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(knightBlack.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("knightBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 200+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(knightBlack2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("knightBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 220+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(bishopBlack.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("bishopBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 240+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(bishopBlack2.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("bishopBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 260+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
             }
         } catch(Exception e) {}
         try {
             if(queenBlack.getX() == -1000) {
                 Image i = ImageIO.read(getClass().getResourceAsStream("queenBlack.png"));
-                g2.drawImage(i, (int) 0+15, (int) 280+150, 10, 10, null);
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
             }
         } catch(Exception e) {}
     }
@@ -1295,6 +1333,7 @@ public class JavaChess implements MouseListener {
     JPanel pp = new JPanel();
 
     void setGUI() {
+        
         j.setLayout(null);
         j.setBounds(0,0,1000,900);
         p.setBounds(0,0,800,800);
@@ -1340,12 +1379,14 @@ public class JavaChess implements MouseListener {
     }
     
     void setGraphics() {
+        
         g = p.getGraphics();
         
         g2 = pp.getGraphics();
     }
     
     public static void main(String[] args) {
+        
         new JavaChess();
     }
 }
