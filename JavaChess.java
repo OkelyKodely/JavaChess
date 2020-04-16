@@ -41,7 +41,7 @@ public class JavaChess implements MouseListener {
                     refresh();
                     drawEaten();
                     try {
-                        Thread.sleep(10000);
+                        Thread.sleep(30000);
                     } catch(Exception e) {}
                 }
             }
@@ -270,6 +270,112 @@ public class JavaChess implements MouseListener {
                 g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
             }
         } catch(Exception e) {}
+
+        boolean isPieceSelected = false;
+
+        if(rookBlack.getX() == selectedX && rookBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(rookBlack2.getX() == selectedX && rookBlack2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(bishopBlack.getX() == selectedX && bishopBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(bishopBlack2.getX() == selectedX && bishopBlack2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightBlack.getX() == selectedX && knightBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightBlack2.getX() == selectedX && knightBlack2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack.getX() == selectedX && pawnBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack2.getX() == selectedX && pawnBlack2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack3.getX() == selectedX && pawnBlack3.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack4.getX() == selectedX && pawnBlack4.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack5.getX() == selectedX && pawnBlack5.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack6.getX() == selectedX && pawnBlack6.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack7.getX() == selectedX && pawnBlack7.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnBlack8.getX() == selectedX && pawnBlack8.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(kingBlack.getX() == selectedX && kingBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(queenBlack.getX() == selectedX && queenBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(rookWhite.getX() == selectedX && rookWhite.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(rookWhite2.getX() == selectedX && rookWhite2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(bishopWhite.getX() == selectedX && bishopWhite.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(bishopWhite2.getX() == selectedX && bishopWhite2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightWhite.getX() == selectedX && knightWhite.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightWhite2.getX() == selectedX && knightWhite2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite.getX() == selectedX && pawnWhite.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite2.getX() == selectedX && pawnWhite2.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite3.getX() == selectedX && pawnWhite3.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite4.getX() == selectedX && pawnWhite4.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite5.getX() == selectedX && pawnWhite5.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite6.getX() == selectedX && pawnWhite6.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite7.getX() == selectedX && pawnWhite7.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnWhite8.getX() == selectedX && pawnWhite8.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(kingWhite.getX() == selectedX && kingWhite.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+        if(queenBlack.getX() == selectedX && queenBlack.getY() == selectedY) {
+            isPieceSelected = true;
+        }
+            
+        if(isPieceSelected) {
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setStroke(new BasicStroke(5));
+            g2.setColor(Color.GREEN);
+            g2.drawRect(selectedX*100+10, selectedY*100+10, 80, 80);
+        }
     }
     
     @Override
@@ -289,6 +395,7 @@ public class JavaChess implements MouseListener {
             
             press = 1;
             refresh();
+            drawEaten();
         } else if(press == 1) {
             
             selectedX = -10;
@@ -492,6 +599,7 @@ public class JavaChess implements MouseListener {
             }
             press = 0;
             refresh();
+            drawEaten();
         }
     }
 
